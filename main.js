@@ -28,8 +28,14 @@ const dirLight2 = new THREE.DirectionalLight(0xffffff, 2);
 dirLight2.position.set(-5, 3, 2);
 scene.add(dirLight2);
 
-// 3. Real 3D Model Loader (GLTFLoader - BMW M4 CSL Load karna)
+// 3. Real 3D Model Loader (GLTFLoader aur DRACOLoader Setup)
+// Pehle Draco Loader set up kiya taake compressed model decode ho sake
+const dracoLoader = new THREE.DRACOLoader();
+dracoLoader.setDecoderPath('https://www.gstatic.com/draco/versioned/decoders/1.5.6/');
+
 const loader = new THREE.GLTFLoader();
+loader.setDRACOLoader(dracoLoader); // Loader ko Draco Loader assign kiya
+
 let bmwModel;
 
 loader.load(
