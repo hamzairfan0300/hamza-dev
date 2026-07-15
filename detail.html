@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMW M4 CSL - Technical Specifications</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #050505;
+            color: #ffffff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding: 40px 10%;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 80px;
+        }
+
+        .back-btn {
+            color: #ccc;
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 14px;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+
+        .back-btn:hover {
+            color: #1c69d4;
+        }
+
+        .title span {
+            color: #1c69d4;
+        }
+
+        /* Specs Container */
+        .specs-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .specs-left h2 {
+            font-size: 45px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .specs-left p {
+            color: #aaa;
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        /* Performance Bars */
+        .stat-bar {
+            margin-bottom: 25px;
+        }
+
+        .stat-info {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 14px;
+            letter-spacing: 1px;
+        }
+
+        .bar-container {
+            width: 100%;
+            height: 8px;
+            background-color: #222;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #1c69d4, #0046ad);
+            border-radius: 10px;
+            width: 0%; /* Isko hum animate karenge class lagne par */
+            transition: width 1.5s cubic-bezier(0.1, 0.8, 0.3, 1);
+        }
+
+        /* Cards on the Right */
+        .specs-right {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .card {
+            background: #111;
+            padding: 30px;
+            border-radius: 8px;
+            border: 1px solid #222;
+            transition: border-color 0.3s;
+        }
+
+        .card:hover {
+            border-color: #1c69d4;
+        }
+
+        .card h3 {
+            color: #1c69d4;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 15px;
+        }
+
+        .card p {
+            font-size: 24px;
+            font-weight: bold;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1 class="title">BMW <span>M4 CSL</span></h1>
+        <a href="index.html" class="back-btn">← Back To 3D Showroom</a>
+    </header>
+
+    <main class="specs-container">
+        
+        <div class="specs-left">
+            <h2>The Peak of M Engineering</h2>
+            <p>The BMW M4 CSL combines traditional racing passion with innovative technology. Light-weight construction, high output engine, and specialized suspension tuning make it a track beast.</p>
+            
+            <div class="stat-bar">
+                <div class="stat-info">
+                    <span>Power-to-weight ratio</span>
+                    <span>95%</span>
+                </div>
+                <div class="bar-container">
+                    <div class="bar-fill" style="width: 95%;"></div>
+                </div>
+            </div>
+
+            <div class="stat-bar">
+                <div class="stat-info">
+                    <span>Track Handling</span>
+                    <span>90%</span>
+                </div>
+                <div class="bar-container">
+                    <div class="bar-fill" style="width: 90%;"></div>
+                </div>
+            </div>
+
+            <div class="stat-bar">
+                <div class="stat-info">
+                    <span>Aerodynamics</span>
+                    <span>85%</span>
+                </div>
+                <div class="bar-container">
+                    <div class="bar-fill" style="width: 85%;"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="specs-right">
+            <div class="card">
+                <h3>Max Speed</h3>
+                <p>307 km/h</p>
+            </div>
+            <div class="card">
+                <h3>Torque</h3>
+                <p>650 Nm</p>
+            </div>
+            <div class="card">
+                <h3>Curb Weight</h3>
+                <p>1,625 kg</p>
+            </div>
+            <div class="card">
+                <h3>Transmission</h3>
+                <p>8-Speed M Steptronic</p>
+            </div>
+        </div>
+
+    </main>
+
+</body>
+</html>

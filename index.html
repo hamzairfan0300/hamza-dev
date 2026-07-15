@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMW M4 - 3D Fan Experience</title>
+    
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* HAMZA INTRO OVERLAY STYLING */
+        #intro-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: #000000;
+            z-index: 999999; /* Isko sabse upar rakhne ke liye */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            overflow: hidden;
+            transition: opacity 1.2s ease-in-out, visibility 1.2s ease-in-out;
+            opacity: 1;
+            visibility: visible;
+        }
+
+        #intro-overlay.fade-out {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        #hamza-text {
+            font-family: 'Syncopate', 'Poppins', sans-serif;
+            font-size: 70px;
+            font-weight: 900;
+            color: #ffffff;
+            letter-spacing: 12px;
+            text-align: center;
+            line-height: 1.2;
+            text-transform: uppercase;
+            margin: 0;
+        }
+
+        #hamza-text span {
+            color: #1c69d4;
+            text-shadow: 0 0 40px rgba(28, 105, 212, 0.7);
+        }
+
+        #hamza-sub {
+            font-family: 'Poppins', sans-serif;
+            color: #555;
+            letter-spacing: 6px;
+            font-size: 13px;
+            margin-top: 20px;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="intro-overlay">
+        <h1 id="hamza-text">CREATED BY<br><span>HAMZA</span></h1>
+        <p id="hamza-sub">Unleashing M-Power...</p>
+    </div>
+
+    <canvas class="webgl"></canvas>
+
+    <nav>
+        <div class="logo">BMW <span>M4</span></div>
+        <ul class="nav-links">
+            <li><a href="#home" class="active">Home</a></li>
+            <li><a href="#specs">Specifications</a></li>
+            <li><a href="#performance">Performance</a></li>
+            <li><a href="#contact">Fan Zone</a></li>
+            <li><a href="experience.html">Experience Mode</a></li>
+        </ul>
+    </nav>
+
+    <section id="home">
+        <div class="section-content">
+            <h1>The Ultimate<br><span>BMW M4</span></h1>
+            <p class="tagline">Experience high-performance engineering redefined through immersive interactive 3D technology.</p>
+            
+            <a href="detail.html" class="btn-explore">Explore Technical Details →</a>
+        </div>
+    </section>
+
+    <section id="specs">
+        <div class="section-content">
+            <h2>Technical Specs</h2>
+            <p>Har ek angle se optimize kiya gaya high-fidelity mesh model jo hardware performance aur high-frame-rates ensure karta hai.</p>
+            
+            <div class="specs-grid">
+                <div class="specs-row">
+                    <div class="specs-cell label">Engine Type</div>
+                    <div class="specs-cell value">S58 Twin-Turbo I6</div>
+                </div>
+                <div class="specs-row">
+                    <div class="specs-cell label">Horsepower</div>
+                    <div class="specs-cell value">503 HP</div>
+                </div>
+                <div class="specs-row">
+                    <div class="specs-cell label">0-60 MPH</div>
+                    <div class="specs-cell value">3.4 Seconds</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="performance">
+        <div class="section-content">
+            <h2>Performance Lab</h2>
+            <p>Jab aap page ko mazeed niche scroll karenge, ye 3D model dynamic tarike se rotate hoga aur complete custom breakdowns ko display karega.</p>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="section-content">
+            <h2>Ready to Experience?</h2>
+            <p>Explore individual customized pages, community asset distribution hubs, and deep immersive design architecture options.</p>
+            <a href="#" class="btn">Enter Full Showroom</a>
+        </div>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            // Intro text animation entry
+            gsap.from("#hamza-text", { duration: 1.2, scale: 0.5, opacity: 0, ease: "back.out(1.5)" });
+            gsap.from("#hamza-sub", { duration: 1, opacity: 0, y: 15, delay: 0.5 });
+
+            // 2.5 seconds baad screen automatically fade out ho kar aapka page reveal ho jayega
+            setTimeout(() => {
+                const overlay = document.getElementById('intro-overlay');
+                overlay.classList.add('fade-out');
+                
+                // Pure flow ko interactable banane ke liye backdrop container ko remove kar dega
+                setTimeout(() => {
+                    overlay.style.display = 'none';
+                }, 1200);
+            }, 2500); 
+        });
+    </script>
+
+    <script src="main.js"></script>
+</body>
+</html>

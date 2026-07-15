@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMW M4 - Pure Sound & Power</title>
+    <link rel="stylesheet" href="experience-style.css">
+</head>
+<body>
+
+    <div class="video-background">
+        <video autoplay loop muted playsinline id="bg-video" preload="auto">
+            <source src="bmw_video.mp4" type="video/mp4">
+        </video>
+        <div class="video-overlay"></div>
+    </div>
+
+    <header>
+        <div class="logo">BMW <span>M-Power</span></div>
+        <a href="index.html" class="back-btn">← Back to Showroom</a>
+    </header>
+
+    <main class="scroll-container">
+        
+        <section class="scroll-section">
+            <div class="animated-box glass-card card-spin raw-glass">
+                <div class="card-content">
+                    <h2>Feel the Engine</h2>
+                    <p>Pure mechanical roar. The twin-turbo engine breathes life into the asphalt, leaving behind nothing but adrenaline.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="scroll-section">
+            <div class="animated-box glass-card card-drop m4-pic-2">
+                <div class="card-content image-card-overlay">
+                    <h2>Perfect Balance</h2>
+                    <p>50/50 weight distribution ensures that every corner is a playground. Track-ready, street-legal.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="scroll-section">
+            <div class="animated-box glass-card card-zigzag-left m4-pic-3">
+                <div class="card-content image-card-overlay">
+                    <h2>Designed by Wind</h2>
+                    <p>Every curve, vent, and spoiler is sculpted to manipulate airflow, generating maximum downforce at high speeds.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="scroll-section">
+            <div class="animated-box glass-card card-zigzag-right m4-pic-4">
+                <div class="card-content image-card-overlay">
+                    <h2>TwinPower Turbo</h2>
+                    <p>Two mono-scroll turbochargers deliver instant throttle response. Zero lag. Pure power whenever you demand it.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="scroll-section">
+            <div class="animated-box glass-card card-flip m4-pic-5">
+                <div class="card-content image-card-overlay">
+                    <h2>The Icon Lives</h2>
+                    <p>The M4 isn't just a car; it's a statement of performance and engineering perfection. Are you ready to command the road?</p>
+                    <a href="index.html" class="showroom-btn">Return to 3D Showroom</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        // 1. CARD SPIN (Raw Glass - Pehle box ke liye scroll hone par background video thodi fade out hogi)
+        gsap.fromTo('.card-spin', 
+            { opacity: 0, scale: 0.2, rotation: -360 }, 
+            {
+                opacity: 1,
+                scale: 1,
+                rotation: 0,
+                scrollTrigger: {
+                    trigger: '.card-spin',
+                    start: "top 90%",
+                    end: "top 40%",
+                    scrub: 1
+                }
+            }
+        );
+
+        // Video and overall dark overlay zoom/fade effects as you scroll down
+        gsap.to('.video-background', {
+            opacity: 0.1, // Niche scroll karte hi video halki ho jayegi taaki images saaf dikhein
+            scrollTrigger: {
+                trigger: '.m4-pic-2',
+                start: "top 80%",
+                end: "top 20%",
+                scrub: true
+            }
+        });
+
+        // 2. CARD DROP
+        gsap.fromTo('.card-drop', 
+            { opacity: 0, y: -400, rotationX: 45 }, 
+            {
+                opacity: 1,
+                y: 0,
+                rotationX: 0,
+                scrollTrigger: {
+                    trigger: '.card-drop',
+                    start: "top 90%",
+                    end: "top 45%",
+                    scrub: 1
+                }
+            }
+        );
+
+        // 3. ZIGZAG LEFT
+        gsap.fromTo('.card-zigzag-left', 
+            { opacity: 0, x: -300, rotation: -20 }, 
+            {
+                opacity: 1,
+                x: 0,
+                rotation: 0,
+                scrollTrigger: {
+                    trigger: '.card-zigzag-left',
+                    start: "top 90%",
+                    end: "top 45%",
+                    scrub: 1
+                }
+            }
+        );
+
+        // 4. ZIGZAG RIGHT
+        gsap.fromTo('.card-zigzag-right', 
+            { opacity: 0, x: 300, rotation: 20 }, 
+            {
+                opacity: 1,
+                x: 0,
+                rotation: 0,
+                scrollTrigger: {
+                    trigger: '.card-zigzag-right',
+                    start: "top 90%",
+                    end: "top 45%",
+                    scrub: 1
+                }
+            }
+        );
+
+        // 5. THE FINALE FLIP
+        gsap.fromTo('.card-flip', 
+            { opacity: 0, rotationY: 180, scale: 0.5 }, 
+            {
+                opacity: 1,
+                rotationY: 0,
+                scale: 1,
+                scrollTrigger: {
+                    trigger: '.card-flip',
+                    start: "top 90%",
+                    end: "top 40%",
+                    scrub: 1
+                }
+            }
+        );
+    </script>
+</body>
+</html>
