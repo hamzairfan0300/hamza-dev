@@ -33,7 +33,7 @@ const loader = new THREE.GLTFLoader();
 let bmwModel;
 
 loader.load(
-    'bmw_m4csl.glb',
+    'bmw_m4csl.glb?v=1',
     (gltf) => {
         bmwModel = gltf.scene;
         
