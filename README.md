@@ -1,2 +1,9 @@
-# hamza-dev
-An interactive 3D web experience for the BMW M4 CSL. Features scroll-linked 3D model rotation, a custom preloader, Experience Mode with video integration, and dynamic layouts. Built with JS, HTML/CSS, and Three.js."
+### 🛠️ Tech Stack & Skills Used in This Project
+
+![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/javascript-%23F7DF1E.svg?style=for-the-badge&logo=javascript&logoColor=black)
+![Three.js](https://img.shields.io/badge/threejs-%23000000.svg?style=for-the-badge&logo=three.js&logoColor=white)
+![WebGL](https://img.shields.io/badge/webgl-%23990000.svg?style=for-the-badge&logo=webgl&logoColor=white)
+![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white)
+![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)
